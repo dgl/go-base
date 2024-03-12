@@ -1,0 +1,7 @@
+# Run the binary using the final image, to catch a CGO binary using static
+# base, etc. (This costs an extra layer, but worth it.)
+RUN ["/app/main", "-version"]
+
+CMD ["/app/main", "-listen=:8080"]
+# For development tools.
+EXPOSE 8080
